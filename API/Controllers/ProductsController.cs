@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Entities;
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,28 +10,21 @@ namespace API.Controllers;
 [ApiController]
 //define the route for requests
 [Route("api/[controller]")]
-public class ProductsController : ControllerBase
+public class ProductsController(IProductRepository repo) : ControllerBase
 {
-    private readonly StoreContext context;
-
-    //old way for dependency injection
-    public ProductsController(StoreContext context)
-    {
-        this.context = context;
-    }
-
-
     [HttpGet]
     //actionResult allow to return HTTP responses
-    public async Task<ActionResult<IEnumerable<Product>>>GetProducts()
+
+    public async Task<ActionResult<IReadOnlyList<Product>>>GetProducts()
     {
-        return await context.Products.ToListAsync();
+        //ok-meet requirements spesified in IReadOnlyList
+        return Ok(await repo.GetProductsAsync());
     }
 
     [HttpGet("{id:int}")]//api/products/id
     public async Task<ActionResult<Product>>GetProduct(int id)
     {
-        var product = await context.Products.FindAsync(id);
+        var product = await repo.GetProductByIdAsync(id);
 
         //checking for product to not return null 
         if(product==null) return NotFound();
@@ -42,11 +36,15 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Product>>CreateProduct(Product product)
     {
-        context.Products.Add(product);
+        repo.AddProduct(product);
 
-        await context.SaveChangesAsync();
+        //cheking if changes could be saved
+        if(await repo.SaveChangesAsync())
+        {                           //specify the name of the action, also specify the route 
+            return CreatedAtAction("GetProduct", new{id=product.Id}, product);
+        }
 
-        return product;
+        return BadRequest("Problem creating product");
     }
 
     //update endpoint
@@ -57,31 +55,38 @@ public class ProductsController : ControllerBase
            return BadRequest("Cannot update this product");
 
         //tell  entityFramework that the product is  modified
-        context.Entry(product).State=EntityState.Modified;
+        // context.Entry(product).State=EntityState.Modified;
+        repo.UpdateProduct(product);
 
-        await context.SaveChangesAsync();
+         if(await repo.SaveChangesAsync())
+         {
+            return NoContent();
+         }
 
-        return NoContent();
+        return BadRequest("Problem updating the product ");
     }
 
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> DeleteProduct(int id)
     {
-        var product = await context.Products.FindAsync(id);
+        var product = await repo.GetProductByIdAsync(id);
 
         if(product == null) return NotFound();
 
-        context.Products.Remove(product);
+        repo.DeleteProduct(product);
 
-        await context.SaveChangesAsync();
+         if(await repo.SaveChangesAsync())
+         {
+            return NoContent();
+         }
 
-        return NoContent();
+        return BadRequest("Problem deleting the product ");
 
     }
 
     //cheking if product exists
     private bool ProductExists(int id)
     {
-        return context.Products.Any(x=>x.Id==id);
+        return repo.ProductExists(id);
     }
 }
