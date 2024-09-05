@@ -27,4 +27,23 @@ var app = builder.Build();
 
 app.MapControllers();
 
+try
+{
+     // dispose anythings we used from this scope
+    using var scope= app.Services.CreateScope();
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<StoreContext>();
+
+    //create a database if dont already have it and apply any pending migrations
+    await context.Database.MigrateAsync();
+
+    await StoreContextSeed.SeedAsync(context);
+}
+catch (Exception ex)
+{
+    
+   Console.WriteLine(ex);
+   throw;
+}
+
 app.Run();

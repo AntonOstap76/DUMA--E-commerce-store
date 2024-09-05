@@ -1,0 +1,164 @@
+[
+  {
+    "Name": "Glass Pillow 3",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 125,
+    "PictureUrl": "/images/products/sb-ang1.png",
+    "Type": "Glass",
+    "Brand": "DUMA",
+    "QuantityInStock": 82
+  },
+  {
+    "Name": "Green Cup 3000",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 150,
+    "PictureUrl": "/images/products/sb-ang2.png",
+    "Type": "Cups",
+    "Brand": "DUMA",
+    "QuantityInStock": 75
+  },
+  {
+    "Name": "Core monstr 3",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 180,
+    "PictureUrl": "/images/products/sb-core1.png",
+    "Type": "Ceramics",
+    "Brand": "Iberian",
+    "QuantityInStock": 3
+  },
+  {
+    "Name": "Super glassPillow",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 300,
+    "PictureUrl": "/images/products/sb-core2.png",
+    "Type": "Glass",
+    "Brand": "Iberian",
+    "QuantityInStock": 52
+  },
+  {
+    "Name": "React Glass Cat",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 250,
+    "PictureUrl": "/images/products/sb-react1.png",
+    "Type": "Glass",
+    "Brand": "DUMA",
+    "QuantityInStock": 97
+  },
+  {
+    "Name": " Entry Cup",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 120,
+    "PictureUrl": "/images/products/sb-ts1.png",
+    "Type": "Cups",
+    "Brand": "DUMA",
+    "QuantityInStock": 37
+  },
+  {
+    "Name": "Core Blue lady",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 10,
+    "PictureUrl": "/images/products/hat-core1.png",
+    "Type": "Paintings",
+    "Brand": "DUMA",
+    "QuantityInStock": 32
+  },
+  {
+    "Name": "Orange Face",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 8,
+    "PictureUrl": "/images/products/hat-react1.png",
+    "Type": "Cups",
+    "Brand": "DUMA",
+    "QuantityInStock": 6
+  },
+  {
+    "Name": "Purple Lady",
+    "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 15,
+    "PictureUrl": "/images/products/hat-react2.png",
+    "Type": "Paintings",
+    "Brand": "DUMA",
+    "QuantityInStock": 17
+  },
+  {
+    "Name": "A Blue Nun ",
+    "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
+    "Price": 18,
+    "PictureUrl": "/images/products/glove-code1.png",
+    "Type": "Paintings",
+    "Brand": "Iberian",
+    "QuantityInStock": 74
+  },
+  {
+    "Name": "Green Code Cup",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 15,
+    "PictureUrl": "/images/products/glove-code2.png",
+    "Type": "Cups",
+    "Brand": "Iberian",
+    "QuantityInStock": 19
+  },
+  {
+    "Name": "Purple React Pillow",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
+    "Price": 16,
+    "PictureUrl": "/images/products/glove-react1.png",
+    "Type": "Glass",
+    "Brand": "DUMA",
+    "QuantityInStock": 77
+  },
+  {
+    "Name": "Green React Vase",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 14,
+    "PictureUrl": "/images/products/glove-react2.png",
+    "Type": "Glass",
+    "Brand": "DUMA",
+    "QuantityInStock": 45
+  },
+  {
+    "Name": "Redis Red Horse",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 250,
+    "PictureUrl": "/images/products/boot-redis1.png",
+    "Type": "Ceramics",
+    "Brand": "DUMA",
+    "QuantityInStock": 49
+  },
+  {
+    "Name": "Core Green Fist",
+    "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+    "Price": 189.99,
+    "PictureUrl": "/images/products/boot-core2.png",
+    "Type": "Glass",
+    "Brand": "DUMA",
+    "QuantityInStock": 28
+  },
+  {
+    "Name": "Core Black Cat",
+    "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+    "Price": 199.99,
+    "PictureUrl": "/images/products/boot-core1.png",
+    "Type": "Ceramics",
+    "Brand": "DUMA",
+    "QuantityInStock": 69
+  },
+  {
+    "Name": "Old Gun",
+    "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
+    "Price": 150,
+    "PictureUrl": "/images/products/boot-ang2.png",
+    "Type": "Paintings",
+    "Brand": "DUMA",
+    "QuantityInStock": 35
+  },
+  {
+    "Name": "Green Clock",
+    "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
+    "Price": 180,
+    "PictureUrl": "/images/products/boot-ang1.png",
+    "Type": "Ceramics",
+    "Brand": "DUMA",
+    "QuantityInStock": 27
+  }
+]
