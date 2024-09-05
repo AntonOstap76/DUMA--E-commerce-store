@@ -15,10 +15,10 @@ public class ProductsController(IProductRepository repo) : ControllerBase
     [HttpGet]
     //actionResult allow to return HTTP responses
 
-    public async Task<ActionResult<IReadOnlyList<Product>>>GetProducts()
+    public async Task<ActionResult<IReadOnlyList<Product>>>GetProducts(string?brand, string? type)
     {
         //ok-meet requirements spesified in IReadOnlyList
-        return Ok(await repo.GetProductsAsync());
+        return Ok(await repo.GetProductsAsync(brand,type));
     }
 
     [HttpGet("{id:int}")]//api/products/id
