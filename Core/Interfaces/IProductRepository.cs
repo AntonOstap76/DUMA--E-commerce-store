@@ -11,6 +11,9 @@ public interface IProductRepository
     //?-optinal operator specify if method could return product or null
     Task<Product?>GetProductByIdAsync(int id);
 
+    Task<IReadOnlyList<string>>GetBrandsAsync();
+    Task<IReadOnlyList<string>>GetTypesAsync();
+
     void AddProduct(Product product);
 
     void UpdateProduct(Product product);
