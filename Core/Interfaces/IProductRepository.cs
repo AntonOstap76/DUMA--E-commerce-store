@@ -6,7 +6,7 @@ namespace Core.Interfaces;
 public interface IProductRepository
 {
     //define what are returning 
-    Task<IReadOnlyList<Product>>GetProductsAsync(string? brand, string? type );
+    Task<IReadOnlyList<Product>>GetProductsAsync(string? brand, string? type, string? sort );
 
     //?-optinal operator specify if method could return product or null
     Task<Product?>GetProductByIdAsync(int id);
