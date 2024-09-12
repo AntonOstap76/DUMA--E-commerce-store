@@ -8,6 +8,7 @@ public class SpesificationEvaluator<T> where T : BaseEntity
 {
     // creating a method so we can call it without a new instance  spesification evaluator 
 
+    // specify the actual query which will go to database and we return
     public static IQueryable<T> GetQuery(IQueryable<T> query, ISpecification<T> spec)
     {
         if(spec.Criteria!=null)

@@ -6,5 +6,6 @@ namespace Core.Interfaces;
 // this class created for setting up specification pattern
 public interface ISpecification<T>
 {
-    Expression<Func<T, bool>> Criteria {get;}
+    // what methods supports via specifications
+    Expression<Func<T, bool>> Criteria {get;}// ability to where expression
 }
