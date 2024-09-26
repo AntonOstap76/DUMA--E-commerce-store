@@ -7,5 +7,9 @@ namespace Core.Interfaces;
 public interface ISpecification<T>
 {
     // what methods supports via specifications
-    Expression<Func<T, bool>> Criteria {get;}// ability to where expression
+    Expression<Func<T, bool>>? Criteria {get;}// ability to where expression
+
+    // implementing sorting
+    Expression<Func<T, object>>? OrderBy {get;}
+    Expression<Func<T, object>>? OrderByDescending {get;}
 }
