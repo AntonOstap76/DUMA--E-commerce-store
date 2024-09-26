@@ -97,16 +97,17 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<string>>>GetBrands()
     {
-        //TODO: impement method: from generic repository
-        return Ok();
+       var spec =  new BrandListSpecification();
+        return Ok(await repo.ListAsync(spec));
 
     }
 
      [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<string>>>GetTypes()
     {
-        //TODO: impement method: from generic repository
-        return Ok();
+        var spec = new TypeListSpecification();
+
+        return Ok(await repo.ListAsync(spec));
         
     }
 

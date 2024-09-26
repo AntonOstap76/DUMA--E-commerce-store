@@ -12,4 +12,13 @@ public interface ISpecification<T>
     // implementing sorting
     Expression<Func<T, object>>? OrderBy {get;}
     Expression<Func<T, object>>? OrderByDescending {get;}
+
+    bool IsDictinct {get;}
+}
+
+// creating a projection
+
+public interface ISpecification<T, TResult> : ISpecification<T>
+{
+    Expression<Func<T, TResult>>? Select {get;}
 }
