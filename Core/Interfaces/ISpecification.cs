@@ -14,6 +14,12 @@ public interface ISpecification<T>
     Expression<Func<T, object>>? OrderByDescending {get;}
 
     bool IsDictinct {get;}
+
+    int Take{get;}
+    int Skip{get;}
+    bool isPagingEnabled {get;}
+
+    IQueryable<T> ApplyCriteria(IQueryable<T> query);
 }
 
 // creating a projection

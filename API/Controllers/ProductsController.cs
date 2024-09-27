@@ -1,4 +1,5 @@
 ﻿using System;
+using API.RequestHelpers;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -25,8 +26,13 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
 
         var products = await repo.ListAsync(spec);
 
+        var count = await repo.CountAsync(spec);
+
+        var pagination = new Pagination<Product>(specParams.PageIndex, specParams.PageSize,
+                                                count, products);
+
         //ok-meet requirements spesified in IReadOnlyList
-        return Ok(products);
+        return Ok(pagination);
     }
 
 
