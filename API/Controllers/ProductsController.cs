@@ -8,11 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
-//define that its controller 
-[ApiController]
-//define the route for requests
-[Route("api/[controller]")]
-public class ProductsController(IGenericRepository<Product> repo) : ControllerBase
+public class ProductsController(IGenericRepository<Product> repo) : BaseApiController
 {
 
     [HttpGet]
@@ -24,15 +20,8 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
 
         var spec = new ProductSpecification(specParams);
 
-        var products = await repo.ListAsync(spec);
-
-        var count = await repo.CountAsync(spec);
-
-        var pagination = new Pagination<Product>(specParams.PageIndex, specParams.PageSize,
-                                                count, products);
-
-        //ok-meet requirements spesified in IReadOnlyList
-        return Ok(pagination);
+        
+        return await CreatePagedResult(repo, spec, specParams.PageIndex, specParams.PageSize); 
     }
 
 
