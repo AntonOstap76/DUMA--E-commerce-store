@@ -3,7 +3,7 @@
     "Name": "Glass Pillow 3",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 125,
-    "PictureUrl": "/images/products/sb-ang1.png",
+    "PictureUrl": "/images/products/glass-pillow-3.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 82
@@ -12,7 +12,7 @@
     "Name": "Green Cup 3000",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
     "Price": 150,
-    "PictureUrl": "/images/products/sb-ang2.png",
+    "PictureUrl": "/images/products/green-cup-3000.png",
     "Type": "Cups",
     "Brand": "DUMA",
     "QuantityInStock": 75
@@ -21,7 +21,7 @@
     "Name": "Core monstr 3",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 180,
-    "PictureUrl": "/images/products/sb-core1.png",
+    "PictureUrl": "/images/products/core-monster.png",
     "Type": "Ceramics",
     "Brand": "Iberian",
     "QuantityInStock": 3
@@ -30,7 +30,7 @@
     "Name": "Super glassPillow",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 300,
-    "PictureUrl": "/images/products/sb-core2.png",
+    "PictureUrl": "/images/products/super-glass-pillow.png",
     "Type": "Glass",
     "Brand": "Iberian",
     "QuantityInStock": 52
@@ -39,7 +39,7 @@
     "Name": "React Glass Cat",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 250,
-    "PictureUrl": "/images/products/sb-react1.png",
+    "PictureUrl": "/images/products/react-glass-cat.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 97
@@ -48,7 +48,7 @@
     "Name": "Entry Cup",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 120,
-    "PictureUrl": "/images/products/sb-ts1.png",
+    "PictureUrl": "/images/products/entry-cup.png",
     "Type": "Cups",
     "Brand": "DUMA",
     "QuantityInStock": 37
@@ -57,7 +57,7 @@
     "Name": "Core Blue lady",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 10,
-    "PictureUrl": "/images/products/hat-core1.png",
+    "PictureUrl": "/images/products/core-blue-lady.png",
     "Type": "Paintings",
     "Brand": "DUMA",
     "QuantityInStock": 32
@@ -66,7 +66,7 @@
     "Name": "Orange Face",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 8,
-    "PictureUrl": "/images/products/hat-react1.png",
+    "PictureUrl": "/images/products/orange-face.png",
     "Type": "Cups",
     "Brand": "DUMA",
     "QuantityInStock": 6
@@ -84,7 +84,7 @@
     "Name": "A Blue Nun ",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
     "Price": 18,
-    "PictureUrl": "/images/products/glove-code1.png",
+    "PictureUrl": "/images/products/blue-nun.png",
     "Type": "Paintings",
     "Brand": "Iberian",
     "QuantityInStock": 74
@@ -93,7 +93,7 @@
     "Name": "Green Code Cup",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 15,
-    "PictureUrl": "/images/products/glove-code2.png",
+    "PictureUrl": "/images/products/green-code-cup.png",
     "Type": "Cups",
     "Brand": "Iberian",
     "QuantityInStock": 19
