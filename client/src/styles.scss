@@ -15,6 +15,7 @@ $customTheme: mat.define-theme();
 
     .mdc-button, .mdc-raised-button, .mdc-stroked-button, .mdc-flat-button{
         @apply rounded-md
+        
     }
 }
 

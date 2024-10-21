@@ -75,7 +75,7 @@
     "Name": "Purple Lady",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 15,
-    "PictureUrl": "/images/products/hat-react2.png",
+    "PictureUrl": "/images/products/purple-lady.png",
     "Type": "Paintings",
     "Brand": "DUMA",
     "QuantityInStock": 17
@@ -102,7 +102,7 @@
     "Name": "Purple React Pillow",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
     "Price": 16,
-    "PictureUrl": "/images/products/glove-react1.png",
+    "PictureUrl": "/images/products/purple-react-pillow.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 77
@@ -110,7 +110,7 @@
   {
     "Name": "Green React Vase",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,"PictureUrl": "/images/products/glove-react2.png",
+    "Price": 14,"PictureUrl": "/images/products/green.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 45
