@@ -17,7 +17,7 @@ export class ShopService {
   types : string []=[];
   brands: string [] = [];
 
-  getProducts(brands?:string[], types?:string[]){
+  getProducts(brands?:string[], types?:string[], sort?:string){
 // efectevly allow to bi=uilt a query string
     let params=new HttpParams();
 
@@ -28,6 +28,11 @@ export class ShopService {
 
     if(types && types.length>0){
       params=params.append('types', types.join(','))
+   }
+
+// cheking if user choose sort type
+   if(sort){
+    params=params.append('sort',sort);
    }
 
    params=params.append('pageSize', 20);
