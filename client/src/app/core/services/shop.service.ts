@@ -22,7 +22,7 @@ export class ShopService {
 // effectively allow to built a query string
     let params=new HttpParams();
 
-// cheking if user choose filter
+// checking if user choose filter
     if(shopParams.brands.length>0){
        params=params.append('brands', shopParams.brands.join(','))
     }
@@ -31,9 +31,14 @@ export class ShopService {
       params=params.append('types', shopParams.types.join(','))
    }
 
-// cheking if user choose sort type
+// checking if user choose sort type
    if(shopParams.sort){
     params=params.append('sort',shopParams.sort);
+   }
+
+   // checking if user wanted to search something
+   if(shopParams.search){
+    params=params.append('search', shopParams.search);
    }
 
    params=params.append('pageSize', shopParams.pageSize);
