@@ -110,7 +110,7 @@
   {
     "Name": "Green React Vase",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-    "Price": 14,"PictureUrl": "/images/products/green.png",
+    "Price": 14,"PictureUrl": "/images/products/green-react-vase.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 45
@@ -119,7 +119,7 @@
     "Name": "Redis Red Horse",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 250,
-    "PictureUrl": "/images/products/boot-redis1.png",
+    "PictureUrl": "/images/products/redis-red-horse.png",
     "Type": "Ceramics",
     "Brand": "DUMA",
     "QuantityInStock": 49
