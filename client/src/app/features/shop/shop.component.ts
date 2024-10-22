@@ -10,6 +10,9 @@ import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { MatListOption, MatSelectionList, MatSelectionListChange } from '@angular/material/list';
 import { ShopParams } from '../../shared/models/shopParams';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { Pagination } from '../../shared/models/pagination';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-shop',
@@ -21,7 +24,10 @@ import { ShopParams } from '../../shared/models/shopParams';
     MatIcon, 
 
     // for sorting component
-    MatMenu,MatSelectionList,MatListOption,MatMenuTrigger
+    MatMenu,MatSelectionList,MatListOption,MatMenuTrigger,
+
+    // for pagination
+    MatPaginator
 ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
@@ -31,7 +37,7 @@ export class ShopComponent implements OnInit {
   private shopService = inject(ShopService);
   //injecting dialog to shopcomponent
   private dialogService = inject(MatDialog);
-  products: Product[]=[];
+  products?: Pagination<Product>;
 
   sortOptions=[
     {name:'Alphabetical', value:'name'},
@@ -41,6 +47,9 @@ export class ShopComponent implements OnInit {
 
   //initiating object
   shopParams=new ShopParams();
+
+  // for pagination in template
+  pageSizeOptions=[5,10,15,20];
 
   ngOnInit(): void {
      this.initializeShop();
@@ -54,10 +63,17 @@ export class ShopComponent implements OnInit {
 
   getProducts(){
     this.shopService.getProducts(this.shopParams).subscribe({
-      next:response=>this.products=response.data, 
+      next:response=>this.products=response, 
       error: error=>console.log(error),
       
     })
+  }
+
+  //implementation for template function
+  handlePageEvent(event:PageEvent){
+    this.shopParams.pageNumber = event.pageIndex+1;
+    this.shopParams.pageSize = event.pageSize;
+    this.getProducts();
   }
 
  //for sorting 
@@ -67,6 +83,8 @@ export class ShopComponent implements OnInit {
 
     if (selectedOption){
       this.shopParams.sort=selectedOption.value;
+      //putting user on first page
+      this.shopParams.pageNumber=1;
       this.getProducts();
     }
 
@@ -86,6 +104,8 @@ export class ShopComponent implements OnInit {
         if(result){
           this.shopParams.brands=result.selectedBrands;
           this.shopParams.types=result.selectedTypes;
+          //putting user on first page
+          this.shopParams.pageNumber=1;
           this.getProducts();
           
         }
