@@ -7,6 +7,6 @@ export const routes: Routes = [
     {path:'', component: HomeComponent},
     {path:'shop', component: ShopComponent},
     //for opening product details with specified id 
-    {path:'shop/:id', component: ProductDetailsComponent},
+    {path:'shop/:id', component:ProductDetailsComponent},
     {path:'**', redirectTo:'', pathMatch:'full'}
 ];
