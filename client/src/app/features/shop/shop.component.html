@@ -1,3 +1,4 @@
+@if (products){
 <!-- creating a filter dialog -->
 <div class="flex flex-col gap-3">
     <div class="flex justify-between">
@@ -6,7 +7,7 @@
         <mat-paginator 
         class="bg-white"
         (page)="handlePageEvent($event)"
-        [length]="products?.count"
+        [length]="products.count"
         [pageSize]="shopParams.pageSize"
         [showFirstLastButtons]="true"
         [pageSizeOptions]="pageSizeOptions"
@@ -51,7 +52,7 @@
 
 
     <div class="grid grid-cols-5 gap-4" >
-        @for (product of products?.data; track product.id) {
+        @for (product of products.data; track product.id) {
             <!--for input product for product-item component -->
             <app-product-item [product]="product"></app-product-item>
         }
@@ -68,3 +69,5 @@
         }
     </mat-selection-list>
 </mat-menu>
+
+}

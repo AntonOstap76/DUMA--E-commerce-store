@@ -128,7 +128,7 @@
     "Name": "Core Green Fist",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 189.99,
-    "PictureUrl": "/images/products/boot-core2.png",
+    "PictureUrl": "/images/products/core-green-fist.png",
     "Type": "Glass",
     "Brand": "DUMA",
     "QuantityInStock": 28
@@ -137,7 +137,7 @@
     "Name": "Core Black Cat",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 199.99,
-    "PictureUrl": "/images/products/boot-core1.png",
+    "PictureUrl": "/images/products/core-black-cat.png",
     "Type": "Ceramics",
     "Brand": "DUMA",
     "QuantityInStock": 69
@@ -146,7 +146,7 @@
     "Name": "Old Gun",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 150,
-    "PictureUrl": "/images/products/boot-ang2.png",
+    "PictureUrl": "/images/products/old-gun.png",
     "Type": "Paintings",
     "Brand": "DUMA",
     "QuantityInStock": 35
@@ -155,7 +155,7 @@
     "Name": "Green Clock",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 180,
-    "PictureUrl": "/images/products/boot-ang1.png",
+    "PictureUrl": "/images/products/green-clock.png",
     "Type": "Ceramics",
     "Brand": "DUMA",
     "QuantityInStock": 27
