@@ -2,6 +2,20 @@
     <button mat-stroked-button (click)="get500Error()">Test500Error</button>
     <button mat-stroked-button (click)="get404Error()">Test404Error</button>
     <button mat-stroked-button (click)="get401Error()">Test401Error</button>
-    <button mat-stroked-button (click)="get400ValidationError()">Test400ValidationError</button>
+    <button mat-stroked-button (click)="get400ValidationError()">Test Validation Error</button>
     <button mat-stroked-button (click)="get400Error()">Test400Error</button>
 </div>
+
+<!--checking for any validation error that occur -->
+@if(validationErrors){
+
+    <div class="mx-auto max-w-lg mt-5 bg-red-100">
+        <!--each element of list have margin top and botton -->
+        <ul class="space-y-2 p-2">
+            @for (error of validationErrors; track $index) {
+                <li class="text-red-800">{{error}}</li>
+            }
+        </ul>
+    </div>
+
+}
