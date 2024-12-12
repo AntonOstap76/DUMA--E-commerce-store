@@ -25,7 +25,7 @@ public class CartService(IConnectionMultiplexer redis) : ICartService
         //either return value or null
         var data = await _database.StringGetAsync(key);
 
-        // at this data surely not null (data!)
+        // at this stage data surely not null (data!)
 
         return data.IsNullOrEmpty ? null: JsonSerializer.Deserialize<ShoppingCart>(data!);
     }
