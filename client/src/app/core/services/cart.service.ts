@@ -1,9 +1,9 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Cart, CartItem } from '../../shared/models/cart';
 import { Product } from '../../shared/models/product';
-import { findIndex } from 'rxjs';
+import { findIndex, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,14 +14,20 @@ export class CartService {
 
   // signal for cart
   cart=signal<Cart | null> (null);
+  itemCount = computed(()=>{
+    return this.cart()?.items.reduce((sum, item)=> sum+item.quantity, 0)
+  })
 
   //methods for get and set a card
 
   getCart(id:string){
-    return this.http.get<Cart>(this.baseUrl+'cart?id='+id).subscribe({
-      //set signals
-      next: cart=>this.cart.set(cart)
-    })
+    return this.http.get<Cart>(this.baseUrl+'cart?id='+id).pipe(
+      // map- transform observables
+      map(cart=>{
+        this.cart.set(cart);
+        return cart;
+      })
+    )
   }
 
   setCart(cart:Cart){
