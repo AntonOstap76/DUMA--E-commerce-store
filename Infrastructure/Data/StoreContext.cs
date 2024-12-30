@@ -13,6 +13,8 @@ public class StoreContext(DbContextOptions options) :IdentityDbContext<AppUser>(
     // name of property is going to be name of the table inside db server
     public DbSet<Product> Products { get; set; }
 
+    public DbSet<Address> Addresses{ get; set;}
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
