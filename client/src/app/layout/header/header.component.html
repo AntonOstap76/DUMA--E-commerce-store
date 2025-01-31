@@ -1,6 +1,6 @@
 <header class="border-b shadow-md p-3 w-full m-h-20 fixed top-0 z-50 bg-white">
     <div class="flex align-middle items-center justify-between max-w-screen-2xl mx-auto">
-        <img routerLink="/" src="/images/logo.png" alt="app logo" class="max-h-24">
+        <img routerLink="/" src="/images/logo.png" alt="app logo" class="max-h-16">
         <nav class="flex gap-3 my-2 uppercase text-2xl">
             <a  routerLink="/"
              routerLinkActive="active"
@@ -14,8 +14,14 @@
              matBadge="{{cartService.itemCount()}}" matBadgeSize="large" class="custom-badge mt-2 mr-2">
             <mat-icon>shopping_cart</mat-icon>
             </a>
-            <button routerLink="/account/login" mat-stroked-button>Login</button>
-            <button routerLink="/account/register" mat-stroked-button>Register</button>
+            @if(accountService.currentUser())
+            {
+                <button mat-stroked-button (click)="logout()">Logout</button>
+            }
+            @else {
+                <button routerLink="/account/login" mat-stroked-button>Login</button>
+                <button routerLink="/account/register" mat-stroked-button>Register</button>
+            }
         </div>
     </div>
 
