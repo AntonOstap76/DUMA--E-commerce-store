@@ -8,6 +8,7 @@ public class StoreContextSeed
 {
     public static async Task SeedAsync(StoreContext context)
     {
+        //for products
         if(!context.Products.Any()){
             //get data from products.json
             var productsData = await File.ReadAllTextAsync("../Infrastructure/Data/SeedData/products.json");
@@ -18,6 +19,20 @@ public class StoreContextSeed
             if(products==null) return;
 
             context.Products.AddRange(products);
+
+            await context.SaveChangesAsync();
+        }
+//for delivery
+         if(!context.DeliveryMethods.Any()){
+            //get data from delivery.json
+            var dmData = await File.ReadAllTextAsync("../Infrastructure/Data/SeedData/delivery.json");
+
+            //convert data to deliverymethods
+            var methods =JsonSerializer.Deserialize<List<DeliveryMethod>>(dmData);
+
+            if(methods==null) return;
+
+            context.DeliveryMethods.AddRange(methods);
 
             await context.SaveChangesAsync();
         }
