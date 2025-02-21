@@ -24,6 +24,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 //buid a service for generic repository
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddCors();
 
 builder.Services.AddSingleton<IConnectionMultiplexer>(config=>
