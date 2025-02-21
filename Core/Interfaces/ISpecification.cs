@@ -13,6 +13,9 @@ public interface ISpecification<T>
     Expression<Func<T, object>>? OrderBy {get;}
     Expression<Func<T, object>>? OrderByDescending {get;}
 
+    List<Expression<Func<T, object>>>Includes {get;}
+    List<string>IncludeStrings {get;} // For ThenInclude(for related entity of related entity)
+
     bool IsDictinct {get;}
 
     int Take{get;}
