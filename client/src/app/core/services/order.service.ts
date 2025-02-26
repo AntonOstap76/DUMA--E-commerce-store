@@ -10,6 +10,8 @@ export class OrderService {
 
   baseUrl = environment.apiUrl;
   private http = inject(HttpClient);
+  //flag for checkout success guard
+  orderComplete = false;
 
   createOrder(orderToCreate : OrderToCreate){
     return this.http.post<Order>(this.baseUrl+'orders', orderToCreate)

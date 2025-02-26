@@ -98,6 +98,6 @@ public class OrdersController(ICartService cartService, IUnitOfWork unitOfWork) 
 
         if(order == null) NotFound();
 
-        return order.ToDto();
+        return order!.ToDto();
     }
 }

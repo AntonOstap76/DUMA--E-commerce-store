@@ -1,4 +1,5 @@
 using API.Middleware;
+using API.SignalR;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
@@ -42,6 +43,9 @@ builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<AppUser>()
     .AddEntityFrameworkStores<StoreContext>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+// adding signalR service
+// don1t need any configuration
+builder.Services.AddSignalR();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 // builder.Services.AddEndpointsApiExplorer();
@@ -55,10 +59,17 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
     .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
+//for authentication
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
 // adjust endpoints
 app.MapGroup("api/").MapIdentityApi<AppUser>();
+
+//mapping for signalR
+app.MapHub<NotificationHub>("/hub/notifications");
 
 try
 {
