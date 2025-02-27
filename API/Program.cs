@@ -63,6 +63,11 @@ app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowCredentials()
 app.UseAuthentication();
 app.UseAuthorization();
 
+//serve static content
+app.UseDefaultFiles();
+//for js files
+app.UseStaticFiles();
+
 app.MapControllers();
 
 // adjust endpoints
@@ -70,6 +75,8 @@ app.MapGroup("api/").MapIdentityApi<AppUser>();
 
 //mapping for signalR
 app.MapHub<NotificationHub>("/hub/notifications");
+
+app.MapFallbackToController("Index", "Fallback");
 
 try
 {
