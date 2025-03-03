@@ -62,9 +62,11 @@ public class OrdersController(ICartService cartService, IUnitOfWork unitOfWork) 
             DeliveryMethod = deliveryMethod,
             ShippingAddress = orderDto.ShippingAddress, 
             Subtotal = items.Sum(x=>x.Price * x.Quantity),
+            Discount = orderDto.Discount,
             PaymentSummary = orderDto.PaymentSummary,
             PaymentIntentId  = cart.PaymentIntentId,
-            BuyerEmail = email
+            BuyerEmail = email,
+            
         };
         // to track work
         unitOfWork.Repository<Order>().Add(order);

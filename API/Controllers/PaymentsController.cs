@@ -69,35 +69,29 @@ public class PaymentsController(IPaymentService paymentService,
 
     private async Task HandlePaymentIntentSucceeded(PaymentIntent intent)
     {
-        if (intent.Status == "succeeded") 
+       if (intent.Status == "succeeded") 
+    {
+        var spec = new OrderSpecification(intent.Id, true);
+        var order = await unitOfWork.Repository<Order>().GetEntityWithSpec(spec)
+            ?? throw new Exception("Order not found");
+        var orderTotalInCents = (long)Math.Round(order.GetTotal() * 100, 
+            MidpointRounding.AwayFromZero);
+        if (orderTotalInCents != intent.Amount)
         {
-            var spec = new OrderSpecification(intent.Id, true);
-
-            var order = await unitOfWork.Repository<Order>().GetEntityWithSpec(spec)
-                ?? throw new Exception("Order not found");
-
-            var orderTotalInCents = (long)Math.Round(order.GetTotal() * 100, 
-                MidpointRounding.AwayFromZero);
-
-            if (orderTotalInCents != intent.Amount)
-            {
-                order.Status = OrderStatus.PaymentMismatch;
-            } 
-            else
-            {
-                order.Status = OrderStatus.PaymentReceived;
-            }
-
-            await unitOfWork.Complete();
-
-            var connectionId = NotificationHub.GetConnectionIdByEmail(order.BuyerEmail);
-
-            if (!string.IsNullOrEmpty(connectionId))
-            {
-                await hubContext.Clients.Client(connectionId)
-                    .SendAsync("OrderCompleteNotification", order.ToDto());
-            }
+            order.Status = OrderStatus.PaymentMismatch;
+        } 
+        else
+        {
+            order.Status = OrderStatus.PaymentReceived;
         }
+        await unitOfWork.Complete();
+        var connectionId = NotificationHub.GetConnectionIdByEmail(order.BuyerEmail);
+        if (!string.IsNullOrEmpty(connectionId))
+        {
+            await hubContext.Clients.Client(connectionId)
+                .SendAsync("OrderCompleteNotification", order.ToDto());
+        }
+    }
     }
 
     private Event ConstructStripeEvent(string json)

@@ -26,6 +26,8 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         //convert to utc 
         builder.Property(x=>x.OrderDate).HasConversion(d=>d.ToUniversalTime(),
                                                         d=>DateTime.SpecifyKind(d,DateTimeKind.Utc));
+
+        builder.Property(x=>x.Discount).HasColumnType("decimal(18,2)");
         
     }
 }
