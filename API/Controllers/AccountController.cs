@@ -1,13 +1,10 @@
-using System;
 using System.Security.Claims;
 using API.DTOs;
 using API.Extensions;
 using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
@@ -64,7 +61,9 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
             user.FirstName,
             user.LastName, 
             user.Email, 
-            Address = user.Address?.ToDto()
+            Address = user.Address?.ToDto(),
+            // return the role that user is belong to 
+            Roles = User.FindFirstValue(ClaimTypes.Role)
         });
 
     }
