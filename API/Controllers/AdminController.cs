@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Company.ClassLibrary1;
 
 [Authorize(Roles ="Admin")]
-public class AdminController(IUnitOfWork unitOfWork) : BaseApiController
+public class AdminController(IUnitOfWork unitOfWork, IPaymentService paymentService) : BaseApiController
 {
     // get orders from all of the users
     [HttpGet("orders")]
@@ -33,4 +33,34 @@ public class AdminController(IUnitOfWork unitOfWork) : BaseApiController
 
         return order.ToDto();
     }
+
+    // to handle refunds
+    [HttpPost("orders/refund/{id:int}")]
+    public async Task<ActionResult<OrderDto>> RefundOrder(int id)
+    {
+        var spec = new OrderSpecification(id);
+
+        var order = await unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+
+        if(order == null)
+        {
+            return BadRequest("No  order with that id ");
+        }
+
+        if(order.Status == OrderStatus.Pending) return BadRequest("Payment not received for this order");
+
+        var result = await paymentService.RefundPayment(order.PaymentIntentId);
+
+        if(result == "succeeded")
+        {
+            order.Status = OrderStatus.Refunded;
+
+            await unitOfWork.Complete();
+
+            return order.ToDto();
+        }
+
+        return BadRequest("Problem refunding order");
+    }
+
 }
