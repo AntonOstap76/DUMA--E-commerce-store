@@ -54,7 +54,7 @@
                                <button matTooltip="Refund"
                                     [disabled]="order.status === 'Refunded'"
                                     (click)="openConfirmDialog(order.id)"
-                                    mat-icon-button routerLink="/orders/{{order.id}}">
+                                    mat-icon-button >
                                    <mat-icon color="warn">undo</mat-icon>
                                </button>
                             </div>
