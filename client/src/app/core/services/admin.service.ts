@@ -28,7 +28,7 @@ export class AdminService {
   }
 
   refundOrder(id:number){
-    return this.http.post<Order>(this.baseUrl+'admin/orders/refund'+id, {});
+    return this.http.post<Order>(this.baseUrl+'admin/orders/refund/'+id, {});
   }
 
 }

@@ -50,13 +50,16 @@ builder.Services.AddIdentityApiEndpoints<AppUser>()
 
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<ICouponService, CouponService>();
+
+builder.Services.AddSingleton<IResponseCacheService, ResponseCacheService>();
+
 // adding signalR service
 // don1t need any configuration
 builder.Services.AddSignalR();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-// builder.Services.AddEndpointsApiExplorer();
-// builder.Services.AddSwaggerGen();
+//builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddSwaggerGen();
  
 var app = builder.Build();
 
